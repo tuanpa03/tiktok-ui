@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import Button from '~/conponent/Button';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <p>
           Phi Anh Tuan
         </p>
+        <Button />
         <a
           className="App-link"
           href="https://reactjs.org"
