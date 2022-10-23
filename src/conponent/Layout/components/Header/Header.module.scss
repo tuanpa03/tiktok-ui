@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%; // w100% + tab
+    height: 60px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+    display: flex; // df + tab
+    justify-content: center;
+}
+
+.inner {
+    height: 100%; //Kế thừa thằng cha
+    width: 1150px;
+    background-color: #ccc;
+}

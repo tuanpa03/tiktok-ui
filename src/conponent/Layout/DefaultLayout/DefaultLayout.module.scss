@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-direction: column; //Quay theo chieeuf dojc
+    align-items: center;
+}
+
+.container {
+    width: 1150px;
+    display: flex;
+}
+
+.content {
+    flex: 1; // lấy phần còn lại của display
+}
