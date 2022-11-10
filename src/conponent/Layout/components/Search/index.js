@@ -6,6 +6,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/conponent/Popper';
 import AccountItem from '~/conponent/AccountItem';
 import { SearchIcon } from '~/conponent/Icons';
+import { useDebounce } from '~/hooks';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 
@@ -16,6 +17,7 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
+    const debouned = useDebounce(serachValue, 1000); //biến làm delay khi request API
     const inputRef = useRef();
 
     const handleClear = () => {
@@ -29,14 +31,14 @@ function Search() {
     };
 
     useEffect(() => {
-        if (!serachValue.trim()) {
+        if (!debouned.trim()) {
             setSearchResult([]);
             return;
         }
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(serachValue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debouned)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearchResult(res.data);
@@ -45,7 +47,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [serachValue]);
+    }, [debouned]);
 
     return (
         <HeadlessTippy
