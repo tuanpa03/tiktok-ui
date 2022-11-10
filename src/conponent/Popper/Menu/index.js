@@ -10,7 +10,7 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 const defaultFn = () => {}; //function trống để event onChange ko bị lỗi
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1]; //lay phan tu cuoi cua mang
 
@@ -37,6 +37,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     return (
         <Tippy
             interactive
+            hideOnClick={hideOnClick}
             offset={[12, 8]} //chieu ngang - chieu cao
             delay={[0, 800]}
             placement="bottom-end"

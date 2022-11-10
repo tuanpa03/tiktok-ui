@@ -13,11 +13,11 @@ import styles from './Search.module.scss';
 const cx = classNames.bind(styles);
 
 function Search() {
-    const [serachValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
-    const debouned = useDebounce(serachValue, 1000); //biến làm delay khi request API
+    const debouned = useDebounce(searchValue, 1000); //biến làm delay khi request API
     const inputRef = useRef();
 
     const handleClear = () => {
@@ -30,6 +30,17 @@ function Search() {
         setShowResult(false);
     };
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
     useEffect(() => {
         if (!debouned.trim()) {
             setSearchResult([]);
@@ -39,11 +50,11 @@ function Search() {
         setLoading(true);
 
         fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debouned)}&type=less`)
-            .then((res) => res.json())
+            .then((res) => res.json()) // Chuyển đổi chuỗi JSON sang Object
             .then((res) => {
                 setSearchResult(res.data);
                 setLoading(false);
-            })
+            }) // Nhận dữ liệu kiểu JavaScript Object
             .catch(() => {
                 setLoading(false);
             });
@@ -68,20 +79,20 @@ function Search() {
             <div className={cx('search')}>
                 <input
                     ref={inputRef}
-                    value={serachValue}
+                    value={searchValue}
                     placeholder="Search accounts and videos..."
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={() => setShowResult(true)}
                 />
-                {!!serachValue && !loading && (
+                {!!searchValue && !loading && (
                     <button className={cx('clear')} onClick={handleClear}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={handleSubmit}>
                     <SearchIcon />
                 </button>
             </div>
