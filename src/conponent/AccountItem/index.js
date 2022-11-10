@@ -1,5 +1,6 @@
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from '~/conponent/Image';
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 
@@ -8,7 +9,7 @@ const cx = classNames.bind(styles);
 function AccountItem() {
     return (
         <div className={cx('wrapper')}>
-            <img
+            <Image
                 className={cx('avata')}
                 src="https://kimipet.vn/wp-content/uploads/2022/06/cach-tri-nam-cho-meo-tai-nha.jpg"
                 alt="hoaa"
