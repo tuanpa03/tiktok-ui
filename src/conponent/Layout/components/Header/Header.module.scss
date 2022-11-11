@@ -4,9 +4,14 @@
     --search-top-spacer: 9px;
     --search-buttom-with: 52px;
 
-    width: 100%; // w100% + tab
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
     height: 60px;
     box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+    background-color: white;
     display: flex; // df + tab
     justify-content: center;
 }

@@ -48,6 +48,81 @@ const MENU_ITEMS = [
                     code: 'kore',
                     title: 'Hàn Quốc',
                 },
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'Language',
+                    code: 'kore',
+                    title: 'Hàn Quốc',
+                },
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'Language',
+                    code: 'kore',
+                    title: 'Hàn Quốc',
+                },
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'Language',
+                    code: 'kore',
+                    title: 'Hàn Quốc',
+                },
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'Language',
+                    code: 'kore',
+                    title: 'Hàn Quốc',
+                },
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'Language',
+                    code: 'kore',
+                    title: 'Hàn Quốc',
+                },
             ],
         },
     },
