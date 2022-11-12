@@ -18,7 +18,7 @@ import { InboxIcon, MessageIcon, UploadIcon } from '~/conponent/Icons';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/conponent/Button';
 import Menu from '~/conponent/Popper/Menu';
 import Image from '~/conponent/Image';
@@ -29,9 +29,9 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        title: 'English',
+        title: 'Languages',
         children: {
-            title: 'Language',
+            title: 'Languages',
             data: [
                 {
                     type: 'Language',
@@ -180,7 +180,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="titok" />
                 </Link>
 
