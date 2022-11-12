@@ -137,33 +137,32 @@ const MENU_ITEMS = [
     },
 ];
 
-const userMenu = [
-    {
-        icon: <FontAwesomeIcon icon={faUser} />,
-        title: 'View profile',
-        to: '/a@gmailll',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faCoins} />,
-        title: 'Get oins',
-        to: '/coin',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faGear} />,
-        title: 'Settings',
-        to: '/setting',
-    },
-    ...MENU_ITEMS,
-    {
-        icon: <FontAwesomeIcon icon={faSignOut} />,
-        title: 'Log out',
-        to: '/logout',
-        separate: true,
-    },
-];
-
 function Header() {
     const currentUser = true; //Biến user trạng thái login
+    const userMenu = [
+        {
+            icon: <FontAwesomeIcon icon={faUser} />,
+            title: 'View profile',
+            to: '/a@gmailll',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCoins} />,
+            title: 'Get oins',
+            to: '/coin',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear} />,
+            title: 'Settings',
+            to: '/setting',
+        },
+        ...MENU_ITEMS,
+        {
+            icon: <FontAwesomeIcon icon={faSignOut} />,
+            title: 'Log out',
+            to: '/logout',
+            separate: true,
+        },
+    ];
 
     // Handle logic
     const handleMenuChange = (menuItem) => {
@@ -222,11 +221,9 @@ function Header() {
                                 // fallback="https://www.bing.com/th?id=OIP.MpmYBjrTrzejcslqxlWcTwHaHV&w=251&h=248&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
                             />
                         ) : (
-                            <>
-                                <button className={cx('more-btn')}>
-                                    <FontAwesomeIcon icon={faEllipsisVertical} />
-                                </button>
-                            </>
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
                         )}
                     </Menu>
                 </div>

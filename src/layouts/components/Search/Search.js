@@ -15,9 +15,9 @@ const cx = classNames.bind(styles);
 function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
-    const debouned = useDebounce(searchValue, 1000); //biến làm delay khi request API
+    const debouncedValue = useDebounce(searchValue, 1000); //biến làm delay khi request API
     const inputRef = useRef();
 
     const handleClear = () => {
@@ -42,14 +42,14 @@ function Search() {
     };
 
     useEffect(() => {
-        if (!debouned.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debouned)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debouncedValue)}&type=less`)
             .then((res) => res.json()) // Chuyển đổi chuỗi JSON sang Object
             .then((res) => {
                 setSearchResult(res.data);
@@ -58,7 +58,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [debouned]);
+    }, [debouncedValue]);
 
     return (
         // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context
