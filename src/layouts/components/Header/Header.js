@@ -22,7 +22,8 @@ import config from '~/config';
 import Button from '~/conponent/Button';
 import Menu from '~/conponent/Popper/Menu';
 import Image from '~/conponent/Image';
-import Search from '../Search';
+import Search from '~/layouts/components/Search/index';
+// import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -47,71 +48,6 @@ const MENU_ITEMS = [
                     type: 'Language',
                     code: 'kore',
                     title: 'Hàn Quốc',
-                },
-                {
-                    type: 'Language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'Language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    type: 'Language',
-                    code: 'kore',
-                    title: 'Hàn Quốc',
-                },
-                {
-                    type: 'Language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'Language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    type: 'Language',
-                    code: 'kore',
-                    title: 'Hàn Quốc',
-                },
-                {
-                    type: 'Language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'Language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    type: 'Language',
-                    code: 'kore',
-                    title: 'Hàn Quốc',
-                },
-                {
-                    type: 'Language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'Language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    type: 'Language',
-                    code: 'kore',
-                    title: 'Hàn Quốc',
-                },
-                {
-                    type: 'Language',
-                    code: 'en',
-                    title: 'English',
                 },
                 {
                     type: 'Language',

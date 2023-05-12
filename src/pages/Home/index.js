@@ -1,5 +1,11 @@
+import './home.scss';
+
 function Home() {
-    return <h2>Home page</h2>;
+    return (
+        <div className="wrapper">
+            <h2>Home page</h2>
+        </div>
+    );
 }
 
 export default Home;
