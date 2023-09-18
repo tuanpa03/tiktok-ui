@@ -28,13 +28,13 @@ function Sidebar() {
     return (
         <aside className={cx('wrapper')}>
             <Menu>
-                <MenuItem title="For Your" to={config.routes.home} icon={<HomeIcon />} />
-                <MenuItem title="Following" to={config.routes.following} icon={<UserGroupIcon />} />
-                <MenuItem title="Live" to={config.routes.live} icon={<LiveIcon />} />
+                <MenuItem title="Dành cho bạn" to={config.routes.home} icon={<HomeIcon />} />
+                <MenuItem title="Đang theo dõi" to={config.routes.following} icon={<UserGroupIcon />} />
+                <MenuItem title="Khám phá" to={config.routes.detect} icon={<LiveIcon />} />
             </Menu>
 
             <SuggestedAccounts label="Suggested accounts" data={suggestedUser} />
-            <SuggestedAccounts label="Following accounts" data={suggestedUser} />
+            <SuggestedAccounts label="Suggested accounts" data={suggestedUser} />
         </aside>
     );
 }
