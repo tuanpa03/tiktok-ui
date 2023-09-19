@@ -5,16 +5,16 @@
     font-size: 1.6rem;
     font-weight: 700;
     font-family: var(--font-family);
-    min-width: 100px;
+    min-width: 50px;
     padding: 9px 16px;
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--white);
     border: 1px solid transparent;
 
-    + .wrapper {
-        margin-left: 8px;
-    }
+    // + .wrapper {
+    //     margin-left: 8px; // margin 2 the button lien ke
+    // }
 
     // disabled event
     &.disabled {
