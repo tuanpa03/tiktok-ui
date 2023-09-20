@@ -7,6 +7,8 @@
     margin: 5px 0 15px 0;
     padding-bottom: 10px;
     position: relative; // cha cua follow-acc
+    scroll-snap-align: start;
+    scroll-margin-top: 60px;
 
     .follow-acc {
         position: absolute;

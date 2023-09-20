@@ -13,7 +13,7 @@ const CardVideo = () => {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('video-c')}>
-                <video controls autoPlay src={video} />
+                <video src={video} />
             </div>
             <div className={cx('title-name')}>
                 Nàng thẹn thùng xả nháp chứ idol sún đi chơi chưa về để quay tiktok cùng tuii

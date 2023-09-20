@@ -22,6 +22,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-snap-type: y mandatory; // cuộn snap auto khi click mũi tên
 }
 
 body {
