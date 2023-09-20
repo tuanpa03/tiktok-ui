@@ -6,8 +6,6 @@ function Home() {
         <Fragment>
             <Video />
             <Video />
-            <Video />
-            <Video />
         </Fragment>
     );
 }

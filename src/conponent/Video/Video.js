@@ -10,9 +10,47 @@ import Image from '~/conponent/Image';
 import Button from '~/conponent/Button';
 
 import styles from './video.module.scss';
+import { useEffect, useRef, useState } from 'react';
+import { useElementOnScreen } from '~/App';
 const cx = classNames.bind(styles);
 
 const Video = () => {
+    const videoRef = useRef();
+    const [isPalying, setIsPlaying] = useState(false);
+
+    const handleClickVideo = () => {
+        if (isPalying) {
+            videoRef.current.pause();
+            setIsPlaying(!isPalying);
+        } else {
+            videoRef.current.play();
+            setIsPlaying(!isPalying);
+        }
+    };
+
+    // Handle phần auto playing video khi scroll-snap
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3,
+    };
+    const isVisibile = useElementOnScreen(options, videoRef);
+
+    useEffect(() => {
+        if (isVisibile) {
+            if (!isPalying) {
+                videoRef.current.play();
+                setIsPlaying(true);
+            }
+        } else {
+            if (isPalying) {
+                videoRef.current.pause();
+                setIsPlaying(false);
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isVisibile]);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('follow-acc')}>
@@ -30,7 +68,7 @@ const Video = () => {
                     </div>
                 </div>
                 <div className={cx('video-c')}>
-                    <video src={video} />
+                    <video src={video} controls ref={videoRef} onClick={handleClickVideo} />
                 </div>
             </div>
             <div className={cx('col-right')}>
